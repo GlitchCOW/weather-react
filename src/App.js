@@ -13,7 +13,7 @@ export default function App() {
          <p> Skye Palm</p>{" "}
           and is{" "}
           <a
-            href="https://github.com"
+            href="https://github.com/GlitchCOW"
             target="_blank"
             rel="noopener noreferrer"
           >
