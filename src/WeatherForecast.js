@@ -16,17 +16,15 @@ export default function WeatherForecast(props) {
     setLoaded(true);
   }
 
-  function load() {
-    let apiKey = "c99a06af36400a3o817aacf43a5073bt";
+   function load() {
+    let apiKey = "b40b135798f82a05aed08769f9275f50";
     let longitude = props.coordinates.lon;
     let latitude = props.coordinates.lat;
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}`;
-    
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);
   }
-
-  if (loaded) {
+  if (loaded && forecast) {
     return (
       <div className="WeatherForecast">
         <div className="row">
@@ -46,7 +44,6 @@ export default function WeatherForecast(props) {
     );
   } else {
     load();
-
     return null;
   }
 }
